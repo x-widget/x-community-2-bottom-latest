@@ -5,14 +5,14 @@ include_once(G5_LIB_PATH.'/thumbnail.lib.php');
 
 widget_css();
 
-if( $widget_config['forum1'] ) $bo_table = $widget_config['forum1'];
-else $bo_table = bo_table(1);
+if( $widget_config['forum1'] ) $_bo_table = $widget_config['forum1'];
+else $_bo_table = bo_table(1);
 
 if( $widget_config['no'] ) $limit = $widget_config['no'];
 else $limit = 6;
 
 $list = g::posts( array(
-			"bo_table" 	=>	$bo_table,
+			"bo_table" 	=>	$_bo_table,
 			"limit"		=>	$limit,
 			"select"	=>	"idx,domain,bo_table,wr_id,wr_parent,wr_is_comment,wr_comment,ca_name,wr_datetime,wr_hit,wr_good,wr_nogood,wr_name,mb_id,wr_subject,wr_content"
 				)
@@ -23,7 +23,7 @@ if ( $list ) {?>
 <?
 	$count_bottom_posts = 0;
 	foreach ( $list as $li ) {
-		$thumb = get_list_thumbnail($bo_table, $li['wr_id'], 112, 112);
+		$thumb = get_list_thumbnail($_bo_table, $li['wr_id'], 112, 112);
 		
 		$url = $li['url'];		
 		$subject = cut_str($li['wr_subject'], 10, "..." );

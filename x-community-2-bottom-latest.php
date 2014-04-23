@@ -17,10 +17,11 @@ $list = g::posts( array(
 			"select"	=>	"idx,domain,bo_table,wr_id,wr_parent,wr_is_comment,wr_comment,ca_name,wr_datetime,wr_hit,wr_good,wr_nogood,wr_name,mb_id,wr_subject,wr_content"
 				)
 		);	
-
-if ( $list ) {?>
+?>
 <div class='bottom_latest'>
 <?
+if ( $list ) {
+
 	$count_bottom_posts = 0;
 	foreach ( $list as $li ) {
 		$thumb = get_list_thumbnail($_bo_table, $li['wr_id'], 112, 112);
@@ -43,7 +44,10 @@ if ( $list ) {?>
 	$count_bottom_posts++;
 	}?>
 	<div style='clear:both'></div>
-</div>
 <?
 }
+else{
 ?>
+	<div class='no_post'>No Post Available</div>
+<?}?>
+</div>

@@ -48,6 +48,8 @@ if ( $list ) {
 }
 else{
 ?>
-	<div class='no_post'>No Post Available</div>
+	<div class='no_post'>
+		No Post Available
+	</div>
 <?}?>
 </div>

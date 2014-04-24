@@ -20,9 +20,8 @@ $list = g::posts( array(
 ?>
 <div class='bottom_latest'>
 <?
-if ( $list ) {
-
-	$count_bottom_posts = 0;
+$count_bottom_posts = 0;
+if ( $list ) {	
 	foreach ( $list as $li ) {
 		$thumb = get_list_thumbnail($_bo_table, $li['wr_id'], 112, 112);
 		
@@ -42,14 +41,21 @@ if ( $list ) {
 			</div>
 		<?
 	$count_bottom_posts++;
-	}?>
-	<div style='clear:both'></div>
+	}?>	
 <?
 }
 else{
-?>
-	<div class='no_post'>
-		No Post Available
-	</div>
-<?}?>
+for( $i = 1; $i <= 6; $i++ ){
+	if( $i == 1 ) $first_image = 'first-image';
+	else $first_image = null;
+	$img_src = $widget_config['url']."/img/no-image.png";
+?>	
+	<div class='photo <?=$first_image?>'>		
+		<img src='<?=$img_src?>' />				
+		<a class='info' href='javascript:void(0)?>'>No Post Subject <?=$i?><br><br>No Post Content <?=$i?></a>		
+	</div>	
+<?
+	}
+}?>
+<div style='clear:both'></div>
 </div>

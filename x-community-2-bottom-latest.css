@@ -16,7 +16,7 @@
 }
 
 .bottom_latest .photo:hover .info{
-	display:block;
+	display:block;	
 }
 
 .bottom_latest .photo.first-image{	
@@ -33,7 +33,7 @@
 	left: 0;
 	width:95%;
 	height:95%;
-	padding:2.5%;
+	padding:2.6%;
 	background-color: #307b79;
 	color: #ffffff;
 	opacity: 0.8;
@@ -43,8 +43,4 @@
 	word-break:break-all;
 	text-decoration: none;
 	line-height:1.1em;
-}
-
-.bottom_latest .no_post{
-	padding-bottom:10px;
 }

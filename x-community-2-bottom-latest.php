@@ -52,7 +52,7 @@ for( $i = 1; $i <= 6; $i++ ){
 ?>	
 	<div class='photo <?=$first_image?>'>		
 		<img src='<?=$img_src?>' />				
-		<a class='info' href='javascript:void(0)?>'>No Post Subject <?=$i?><br><br>No Post Content <?=$i?></a>		
+		<a class='info' href='javascript:void(0)?>'><br />등록된 글이 없습니다.<br /><br />새 글을 등록해 주세요.</a>		
 	</div>	
 <?
 	}
